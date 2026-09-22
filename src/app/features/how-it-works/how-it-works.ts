@@ -5,9 +5,10 @@ import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-how-it-works',
+  standalone: true,
   imports: [RouterLink, SectionHeading],
   templateUrl: './how-it-works.html',
-  styleUrl: './how-it-works.scss',
+  styleUrls: ['./how-it-works.scss'],
 })
 export class HowItWorks implements OnInit {
   private readonly seo = inject(SeoService);

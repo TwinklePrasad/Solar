@@ -26,12 +26,18 @@
   &__logo {
     display: grid;
     place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 0.65rem;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    color: #fff;
-    font-size: 1.1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.35rem;
+    background: transparent;
+    overflow: visible;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: block;
+      object-fit: contain;
+    }
   }
 
   &__name {

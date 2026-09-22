@@ -7,9 +7,10 @@ import { Job } from '../../core/models/job.model';
 
 @Component({
   selector: 'app-careers',
+  standalone: true,
   imports: [RouterLink, SectionHeading],
   templateUrl: './careers.html',
-  styleUrl: './careers.scss',
+  styleUrls: ['./careers.scss'],
 })
 export class Careers implements OnInit {
   private readonly seo = inject(SeoService);

@@ -6,9 +6,10 @@ import { SupabaseService } from '../../core/services/supabase.service';
 
 @Component({
   selector: 'app-quote',
+  standalone: true,
   imports: [ReactiveFormsModule, SectionHeading],
   templateUrl: './quote.html',
-  styleUrl: './quote.scss',
+  styleUrls: ['./quote.scss'],
 })
 export class Quote implements OnInit {
   private readonly fb = inject(FormBuilder);

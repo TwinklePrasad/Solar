@@ -5,9 +5,10 @@ import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [RouterLink, SectionHeading],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrls: ['./home.scss'],
 })
 export class Home implements OnInit {
   private readonly seo = inject(SeoService);

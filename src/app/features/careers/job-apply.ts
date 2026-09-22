@@ -16,9 +16,10 @@ const ROLE_OPTIONS = [
 
 @Component({
   selector: 'app-job-apply',
+  standalone: true,
   imports: [ReactiveFormsModule, RouterLink, SectionHeading],
   templateUrl: './job-apply.html',
-  styleUrl: './job-apply.scss',
+  styleUrls: ['./job-apply.scss'],
 })
 export class JobApply implements OnInit {
   private readonly fb = inject(FormBuilder);

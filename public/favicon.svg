@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="OM SAI SOLAR favicon">
+  <defs>
+    <linearGradient id="favGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff8a00"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="8" fill="#ffffff"/>
+  <circle cx="24" cy="20" r="10" fill="url(#favGrad)" stroke="#e66f00" stroke-width="1.2" />
+</svg>

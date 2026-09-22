@@ -9,9 +9,10 @@ interface FaqItem {
 
 @Component({
   selector: 'app-faq',
+  standalone: true,
   imports: [SectionHeading],
   templateUrl: './faq.html',
-  styleUrl: './faq.scss',
+  styleUrls: ['./faq.scss'],
 })
 export class Faq implements OnInit {
   private readonly seo = inject(SeoService);

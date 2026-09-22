@@ -5,7 +5,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  standalone: true,
+  styleUrls: ['./header.scss'],
 })
 export class Header {
   readonly menuOpen = signal(false);
