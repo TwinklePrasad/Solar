@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-text);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.65rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  &__name {
+    font-size: 1.05rem;
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: #fff;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem 1rem;
+
+    a {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover,
+      &.is-active {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__cta {
+    margin-left: 0.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    &__toggle {
+      display: inline-flex;
+    }
+
+    &__nav {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem;
+      padding: 1rem;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+
+      &--open {
+        display: flex;
+      }
+
+      a {
+        padding: 0.75rem 0.5rem;
+      }
+
+      .header__cta {
+        margin: 0.5rem 0 0;
+        text-align: center;
+      }
+    }
+  }
+}

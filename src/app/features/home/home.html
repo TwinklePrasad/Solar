@@ -1,0 +1,79 @@
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <p class="hero__eyebrow">Clean energy for homes & businesses</p>
+      <h1>Power your future with professional solar installation</h1>
+      <p class="hero__lead">
+        From free consultation to system activation, OM SAI SOLAR delivers reliable solar
+        installations and ongoing support.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/get-quote" class="btn btn--primary">Get a Free Quote</a>
+        <a routerLink="/careers" class="btn btn--secondary">Join Our Team</a>
+      </div>
+    </div>
+    <div class="hero__card" aria-hidden="true">
+      <div class="hero__badge">Trusted local installers</div>
+      <p>Residential · Commercial · Maintenance</p>
+      <ul>
+        <li>Licensed & insured crews</li>
+        <li>Transparent pricing</li>
+        <li>End-to-end project support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Services"
+      title="Solar solutions built for your property"
+      subtitle="Whether you need a home system, a commercial array, or ongoing maintenance, we have you covered."
+    />
+    <div class="card-grid">
+      @for (service of services; track service.title) {
+        <article class="card">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+        </article>
+      }
+    </div>
+    <div class="section__cta">
+      <a routerLink="/services" class="btn btn--secondary">View all services</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Process"
+      title="How it works"
+      subtitle="A simple path from first conversation to clean energy on your roof."
+    />
+    <div class="steps">
+      @for (step of steps; track step.title; let i = $index) {
+        <article class="steps__item">
+          <span class="steps__num">{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </article>
+      }
+    </div>
+    <div class="section__cta">
+      <a routerLink="/how-it-works" class="btn btn--secondary">See full process</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stats">
+    @for (stat of stats; track stat.label) {
+      <div class="stats__item">
+        <strong>{{ stat.value }}</strong>
+        <span>{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>

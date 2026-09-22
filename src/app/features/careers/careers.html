@@ -1,0 +1,43 @@
+<section class="page-hero">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Careers"
+      title="Build a career in clean energy"
+      subtitle="Join our installation, electrical, sales, and project teams."
+    />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="general-banner">
+      <div>
+        <h2>Don't see your role?</h2>
+        <p>Submit a general application and we will keep your resume on file.</p>
+      </div>
+      <a routerLink="/careers/apply" class="btn btn--secondary">Apply generally</a>
+    </div>
+
+    @if (loading()) {
+      <p class="status-text" role="status">Loading open positions…</p>
+    } @else if (errorMessage()) {
+      <div class="alert alert--error" role="alert">{{ errorMessage() }}</div>
+    } @else {
+      <div class="job-grid">
+        @for (job of jobs(); track job.id) {
+          <article class="job-card">
+            <div class="job-card__meta">
+              <span>{{ job.employment_type }}</span>
+              <span>{{ job.location }}</span>
+            </div>
+            <h2>{{ job.title }}</h2>
+            <p>{{ job.description }}</p>
+            <a [routerLink]="['/careers', job.id, 'apply']" class="btn btn--primary">Apply</a>
+          </article>
+        } @empty {
+          <p class="status-text">No open positions right now. You can still apply generally.</p>
+        }
+      </div>
+    }
+  </div>
+</section>

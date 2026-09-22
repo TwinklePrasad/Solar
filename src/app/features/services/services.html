@@ -1,0 +1,27 @@
+<section class="page-hero">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Services"
+      title="Installation and support for every stage"
+      subtitle="We design, install, and maintain solar systems for homes and businesses."
+    />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container service-list">
+    @for (service of services; track service.title) {
+      <article class="service-card">
+        <h2>{{ service.title }}</h2>
+        <ul>
+          @for (point of service.points; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+  <div class="container section__cta">
+    <a routerLink="/get-quote" class="btn btn--primary">Request a free quote</a>
+  </div>
+</section>

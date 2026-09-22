@@ -1,0 +1,29 @@
+.service-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.service-card {
+  padding: 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+
+  h2 {
+    margin: 0 0 0.75rem;
+    color: var(--color-text);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+}
+
+.section__cta {
+  margin-top: 2rem;
+  text-align: center;
+}

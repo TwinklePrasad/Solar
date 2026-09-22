@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="header__inner container">
+    <a routerLink="/" class="header__brand" (click)="closeMenu()">
+      <span class="header__logo" aria-hidden="true">☀</span>
+      <span class="header__name">OM SAI SOLAR</span>
+    </a>
+
+    <button
+      type="button"
+      class="header__toggle"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="primary-nav"
+      class="header__nav"
+      [class.header__nav--open]="menuOpen()"
+      aria-label="Primary"
+    >
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a routerLink="/get-quote" class="btn btn--primary header__cta" (click)="closeMenu()">
+        Get Quote
+      </a>
+    </nav>
+  </div>
+</header>

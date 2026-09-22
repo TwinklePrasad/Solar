@@ -1,0 +1,154 @@
+:root {
+  --color-primary: #0b7a4b;
+  --color-primary-soft: #e8f7ef;
+  --color-accent: #0ea5e9;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-border: #dbe3ec;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #0b1f2a;
+  --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 16px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 24px 50px rgba(14, 116, 144, 0.25);
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: #fff;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 3.5rem 0;
+
+  &--muted {
+    background: var(--color-surface);
+  }
+}
+
+.page-hero {
+  padding: 3rem 0 1rem;
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: var(--color-primary);
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: #09653e;
+    }
+  }
+
+  &--secondary {
+    background: #fff;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-soft);
+    }
+  }
+}
+
+.alert {
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+
+  &--success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  &--error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

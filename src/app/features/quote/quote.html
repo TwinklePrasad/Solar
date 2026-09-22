@@ -1,0 +1,81 @@
+<section class="page-hero">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Get a quote"
+      title="Tell us about your property"
+      subtitle="Share a few details and our team will follow up with next steps."
+    />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container form-wrap">
+    @if (success()) {
+      <div class="alert alert--success" role="status">
+        Thanks! Your quote request was received. We will contact you soon.
+      </div>
+    }
+
+    @if (errorMessage()) {
+      <div class="alert alert--error" role="alert">{{ errorMessage() }}</div>
+    }
+
+    <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-grid">
+        <label>
+          <span>Full name</span>
+          <input type="text" formControlName="name" autocomplete="name" />
+          @if (hasError('name', 'required') || hasError('name', 'minlength')) {
+            <small class="field-error">Please enter your name.</small>
+          }
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" formControlName="email" autocomplete="email" />
+          @if (hasError('email', 'required') || hasError('email', 'email')) {
+            <small class="field-error">Enter a valid email address.</small>
+          }
+        </label>
+
+        <label>
+          <span>Phone</span>
+          <input type="tel" formControlName="phone" autocomplete="tel" />
+          @if (hasError('phone', 'required') || hasError('phone', 'minlength')) {
+            <small class="field-error">Enter a valid phone number.</small>
+          }
+        </label>
+
+        <label>
+          <span>Property type</span>
+          <select formControlName="property_type">
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </label>
+
+        <label class="full">
+          <span>Property address</span>
+          <input type="text" formControlName="address" autocomplete="street-address" />
+          @if (hasError('address', 'required') || hasError('address', 'minlength')) {
+            <small class="field-error">Enter your property address.</small>
+          }
+        </label>
+
+        <label>
+          <span>Average monthly bill (optional)</span>
+          <input type="number" formControlName="monthly_bill" min="0" step="1" />
+        </label>
+
+        <label class="full">
+          <span>Message / roof notes (optional)</span>
+          <textarea formControlName="message" rows="4"></textarea>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn--primary" [disabled]="submitting()">
+        {{ submitting() ? 'Sending…' : 'Submit quote request' }}
+      </button>
+    </form>
+  </div>
+</section>

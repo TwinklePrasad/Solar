@@ -1,0 +1,26 @@
+<section class="page-hero">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Process"
+      title="From first call to clean energy"
+      subtitle="A clear five-step process so you always know what happens next."
+    />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container timeline">
+    @for (step of steps; track step.title; let i = $index) {
+      <article class="timeline__item">
+        <div class="timeline__marker">{{ i + 1 }}</div>
+        <div>
+          <h2>{{ step.title }}</h2>
+          <p>{{ step.text }}</p>
+        </div>
+      </article>
+    }
+  </div>
+  <div class="container section__cta">
+    <a routerLink="/get-quote" class="btn btn--primary">Start with a free quote</a>
+  </div>
+</section>

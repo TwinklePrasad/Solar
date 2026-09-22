@@ -1,0 +1,41 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  h2 {
+    margin: 0 0 0.75rem;
+  }
+
+  p,
+  li {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  ul {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+  }
+
+  .btn {
+    margin-top: 0.5rem;
+  }
+}
+
+.map-placeholder {
+  margin-top: 1.5rem;
+  min-height: 14rem;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,39 @@
+<section class="page-hero">
+  <div class="container">
+    <app-section-heading
+      eyebrow="FAQ"
+      title="Common questions about going solar"
+      subtitle="Quick answers about cost, timeline, warranties, and maintenance."
+    />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container accordion" role="list">
+    @for (item of items; track item.question; let i = $index) {
+      <div class="accordion__item" role="listitem">
+        <button
+          type="button"
+          class="accordion__trigger"
+          [attr.aria-expanded]="openIndex() === i"
+          [attr.aria-controls]="'faq-panel-' + i"
+          [id]="'faq-trigger-' + i"
+          (click)="toggle(i)"
+        >
+          <span>{{ item.question }}</span>
+          <span aria-hidden="true">{{ openIndex() === i ? '−' : '+' }}</span>
+        </button>
+        @if (openIndex() === i) {
+          <div
+            class="accordion__panel"
+            [id]="'faq-panel-' + i"
+            role="region"
+            [attr.aria-labelledby]="'faq-trigger-' + i"
+          >
+            <p>{{ item.answer }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
